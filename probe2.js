@@ -1,36 +1,25 @@
-const numbers = [1,2,3];
-const names = ["Ana", "Bob", "Carl"];
-const mixed = [1, "Ana", true];
+const fruits = [
+    { name: "Apple", price: 1.50, isSweet: true },
+    { name: "Lemon", price: 2.00, isSweet: false },
+    { name: "Mango", price: 3.50, isSweet: true },
+    { name: "Banana", price: 1.20, isSweet: true }
+];
 
-console.log(names[0]); // Ana
-console.log(names[1]); // Bob
-console.log(names[2]); // Carl
+console.log(fruits[0].name);  // Apple
+console.log(fruits[0].price); // 1.5
 
-console.log(names[3]);
+console.log(fruits[2].name);  
+console.log(fruits[2].price); 
 
-console.log(names[2]);
-
-
-console.log(numbers.length);
-
-
-for(let i =0; i < numbers.length; i++)
-{
-    console.log(numbers[i]);
-}
+const expensiveFruits = fruits.filter(fruit => fruit.price > 2);
+ console.log(expensiveFruits);
 
 
-for(const number of numbers)
-{
-    console.log(number);
-}
+ const fruitNames = fruits.map(fruit => fruit.name);
+
+console.log(fruitNames);
 
 
+const doublePrices = fruits.map(fruit => fruit.price * 2);
 
-
-
-for(const name of names)
-{
-    console.log(name);
-}
-
+console.log(doublePrices);
