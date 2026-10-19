@@ -4,19 +4,19 @@ const fruits = [
   { name: "zitrone", symbol: "🍋", isSweet: false, price: 1.5 }
 ];
 
-// 1. Nur süße Früchte
-const sweetFruits = fruits.filter(fruit => fruit.isSweet);
+// imperative (for ...of)
 
-// 2. Nur saure Früchte, Preis verdoppeln
-const sourFruits = fruits
-  .filter(fruit => !fruit.isSweet)
-  .map(fruit => ({ ...fruit, price: fruit.price * 2 }));
+const sourFruits = [];
 
-console.log("Süße Früchte:");
-console.log(sweetFruits);
+for(const fruit of fruits)
+{
+  if(!fruit.isSweet)
+  {
+    const copyFruit = {
+      ...fruit, price : fruit.price *2
+    };
+    sourFruits.push(copyFruit);
+  }
+}
 
-console.log("Saure Früchte mit doppeltem Preis:");
 console.log(sourFruits);
-
-console.log("Originalpreis der Zitrone:");
-console.log(fruits[2].price);

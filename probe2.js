@@ -1,25 +1,19 @@
 const fruits = [
-    { name: "Apple", price: 1.50, isSweet: true },
-    { name: "Lemon", price: 2.00, isSweet: false },
-    { name: "Mango", price: 3.50, isSweet: true },
-    { name: "Banana", price: 1.20, isSweet: true }
+    { name: "birne", symbol: "🍐", isSweet: true, price: 5.2 },
+    { name: "banana", symbol: "🍌", isSweet: true, price: 3.2 },
+    { name: "zitrone", symbol: "🍋", isSweet: false, price: 1.5 }
 ];
 
-console.log(fruits[0].name);  // Apple
-console.log(fruits[0].price); // 1.5
-
-console.log(fruits[2].name);  
-console.log(fruits[2].price); 
-
-const expensiveFruits = fruits.filter(fruit => fruit.price > 2);
- console.log(expensiveFruits);
 
 
- const fruitNames = fruits.map(fruit => fruit.name);
+// 1. Ekşi meyveleri seç
+const sourFruits = fruits.filter(fruit => !fruit.isSweet);
 
-console.log(fruitNames);
+// 2. Yeni nesneler oluştur ve fiyatlarını iki katına çıkar
+const result = sourFruits.map(fruit => ({
+    ...fruit,
+    price: fruit.price * 2
+}));
 
+console.log(result);
 
-const doublePrices = fruits.map(fruit => fruit.price * 2);
-
-console.log(doublePrices);
